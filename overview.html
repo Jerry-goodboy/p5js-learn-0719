@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>P5js Learn</title>
+	<script type="text/javascript" src="js/p5.js"></script>
+	<script type="text/javascript" src="js/p5.dom.js"></script>
+	<script type="text/javascript" src="js/p5.sound.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<!-- <div id="p5_loading" class="loadingclass">
+		this could be some sweet graphics loading lots of bits.
+	</div> -->
+	<div id='myContainer'>
+		
+	</div>
+	<script>
+		// instance mode
+		var s = function (p) {
+			var x = 100;
+			var y = 100;
+
+			p.setup = function () {
+				p.createCanvas(700, 500);
+			};
+
+			p.draw = function () {
+				p.background(0);
+				p.fill(255);
+				p.rect(x, y, 50, 50);
+			};
+		};
+		var myp5 = new p5(s, "myContainer");
+
+		// global mode
+		// var x = 0;
+		// var img;
+		// function preload() {
+		//   img = loadImage('imgs/cat.jpg');
+		// }
+
+		// function setup() {
+		// 	var myCanvas = createCanvas(1000, 600);
+		// 	myCanvas.parent('myContainer');
+		//   	drawingContext.shadowOffsetX = 5;
+		// 	drawingContext.shadowOffsetY = -5;
+		//     drawingContext.shadowBlur = 10;
+	 //    	drawingContext.shadowColor = "yellow";
+		//   	background(100);
+		//   	line(15, 25, 70, 90);
+		//   	// loadImage('imgs/cat.jpg', drawCat);
+		//   	// preload() function rewrite
+		//   	image(img, 100, 0);
+		// }
+
+		// function draw() {
+		//   	ellipse(x, height/2, 20, 20);
+		//   	if(x<800){
+		//   		x = x + 1;
+		//   	}
+		// }
+
+		// function drawCat(img) {
+		//   image(img, 100, 0);
+		// }
+
+		// function touchMoved() {
+		//   // do some stuff
+		//   return false;
+		// }
+	</script>
+</body>
+</html>

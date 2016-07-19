@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>P5js Learn</title>
+	<script type="text/javascript" src="js/p5.js"></script>
+	<script type="text/javascript" src="js/p5.dom.js"></script>
+	<script type="text/javascript" src="js/p5.sound.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<!-- <div id="p5_loading" class="loadingclass">
+		this could be some sweet graphics loading lots of bits.
+	</div> -->
+	<div id='myContainer'>
+		<!-- <video id='vid' autoplay="true" style="display:none;"><source src=''></video> -->
+		<video id='vid' autoplay="true" ><source src=''></video>
+	</div>
+	<script>
+
+		// with webRTC
+		var video;
+		navigator.getUserMedia = navigator.getUserMedia || 
+                         navigator.webkitGetUserMedia || 
+                         navigator.mozGetUserMedia || 
+                         navigator.msGetUserMedia;
+        video = document.getElementById('vid');
+        navigator.getUserMedia(
+		  // First argument is an object that tells us if we want audio and/or video
+		  { video: true, audio: true }, 
+		  // Second argument is a function that assigns a 'stream' to the video's source
+		  function(stream) {
+		    video.src = window.URL.createObjectURL(stream);
+		  }, 
+		  // Third argument is the callback if the user rejected
+		  rejected
+		);  
+
+		function rejected(e) {
+		  // The user rejected capturing
+		  // We could handle this however we want
+		  console.log('User said no!', e);
+		};
+
+		// // Video
+		// var video;
+
+		// // Drawing context
+		// // Temporary as eventually p5 may support drawing video into canvas directly?
+		// var context;
+
+		// function setup() {
+		//   video = document.getElementById('vid');
+		//   // video.play();
+
+		//   var canvas = createCanvas(300, 260);
+		//   // need to keep track of the context to draw the video
+		//   context = canvas.elt.getContext('2d');
+		// }
+
+		// function draw() {
+		//   background(51);
+		//   // Draw video into canvas
+		//   context.drawImage(video,0,0,width,height);
+		// }
+
+		
+	</script>
+</body>
+</html>
